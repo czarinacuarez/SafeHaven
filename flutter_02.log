@@ -1,0 +1,88 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --start-paused -d 6886861b --devtools-server-address http://127.0.0.1:9100/ --target D:\Flutter-Firebase-Series-main\lib\main.dart
+
+## exception
+
+OutOfMemoryError: Out of Memory
+
+```
+#0      new Uint8List (dart:typed_data-patch/typed_data_patch.dart:2248:3)
+#1      Uint8Buffer._createBuffer (package:typed_data/src/typed_buffer.dart:328:40)
+#2      TypedDataBuffer._createBiggerBuffer (package:typed_data/src/typed_buffer.dart:259:12)
+#3      TypedDataBuffer._ensureCapacity (package:typed_data/src/typed_buffer.dart:241:21)
+#4      TypedDataBuffer._insertKnownLength (package:typed_data/src/typed_buffer.dart:209:5)
+#5      TypedDataBuffer._addAll (package:typed_data/src/typed_buffer.dart:186:7)
+#6      TypedDataBuffer.addAll (package:typed_data/src/typed_buffer.dart:91:5)
+#7      HashSink.add (package:crypto/src/hash_sink.dart:79:18)
+#8      _ByteAdapterSink.add (dart:convert/byte_conversion.dart:49:11)
+#9      Hash.convert (package:crypto/src/hash.dart:28:15)
+#10     _calculateSha (package:flutter_tools/src/android/gradle.dart:944:20)
+#11     AndroidGradleBuilder.buildGradleApp (package:flutter_tools/src/android/gradle.dart:593:36)
+#12     _rootRunUnary (dart:async/zone.dart:1407:47)
+#13     _CustomZone.runUnary (dart:async/zone.dart:1308:19)
+#14     _FutureListener.handleValue (dart:async/future_impl.dart:156:18)
+#15     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:840:45)
+#16     Future._propagateToListeners (dart:async/future_impl.dart:869:13)
+#17     Future._completeWithValue (dart:async/future_impl.dart:641:5)
+#18     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:715:7)
+#19     _rootRun (dart:async/zone.dart:1399:13)
+#20     _CustomZone.run (dart:async/zone.dart:1301:19)
+#21     _CustomZone.runGuarded (dart:async/zone.dart:1209:7)
+#22     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1249:23)
+#23     _microtaskLoop (dart:async/schedule_microtask.dart:40:21)
+#24     _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+#25     _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:190:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.13.8, on Microsoft Windows [Version 10.0.22621.2428], locale en-PH)
+    • Flutter version 3.13.8 on channel stable at C:\src\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 6c4930c4ac (), 2023-10-18 10:57:55 -0500
+    • Engine revision 767d8c75e8
+    • Dart version 3.1.4
+    • DevTools version 2.25.0
+
+[✓] Windows Version (Installed version of Windows is version 10 or higher)
+
+[!] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+    • Android SDK at C:\Users\INTEL\AppData\Local\Android\sdk
+    • Platform android-33, build-tools 33.0.0
+    • Java binary at: C:\Program Files\Android\Android Studio\jbr\bin\java
+    • Java version OpenJDK Runtime Environment (build 11.0.15+0-b2043.56-8887301)
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✓] Visual Studio - develop Windows apps (Visual Studio Build Tools 2022 17.3.1)
+    • Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools
+    • Visual Studio Build Tools 2022 version 17.3.32811.315
+    • Windows 10 SDK version 10.0.19041.0
+
+[!] Android Studio (version 2022.1)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    ✗ Unable to determine bundled Java version.
+    • Try updating or re-installing Android Studio.
+
+[✓] Connected device (5 available)
+    • RMX3363 (mobile)             • 6886861b      • android-arm64  • Android 13 (API 33)
+    • AOSP on IA Emulator (mobile) • emulator-5554 • android-x86    • Android 9 (API 28) (emulator)
+    • Windows (desktop)            • windows       • windows-x64    • Microsoft Windows [Version 10.0.22621.2428]
+    • Chrome (web)                 • chrome        • web-javascript • Google Chrome 118.0.5993.120
+    • Edge (web)                   • edge          • web-javascript • Microsoft Edge 118.0.2088.76
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```

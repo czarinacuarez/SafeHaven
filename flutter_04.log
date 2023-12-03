@@ -1,0 +1,89 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+OutOfMemoryError: Out of Memory
+
+```
+#0      new Uint8List (dart:typed_data-patch/typed_data_patch.dart:2248:3)
+#1      Uint8Buffer._createBuffer (package:typed_data/src/typed_buffer.dart:328:40)
+#2      TypedDataBuffer._createBiggerBuffer (package:typed_data/src/typed_buffer.dart:259:12)
+#3      TypedDataBuffer._ensureCapacity (package:typed_data/src/typed_buffer.dart:241:21)
+#4      TypedDataBuffer._insertKnownLength (package:typed_data/src/typed_buffer.dart:209:5)
+#5      TypedDataBuffer._addAll (package:typed_data/src/typed_buffer.dart:186:7)
+#6      TypedDataBuffer.addAll (package:typed_data/src/typed_buffer.dart:91:5)
+#7      HashSink.add (package:crypto/src/hash_sink.dart:79:18)
+#8      _ByteAdapterSink.add (dart:convert/byte_conversion.dart:49:11)
+#9      Hash.convert (package:crypto/src/hash.dart:28:15)
+#10     _calculateSha (package:flutter_tools/src/android/gradle.dart:944:20)
+#11     AndroidGradleBuilder.buildGradleApp (package:flutter_tools/src/android/gradle.dart:593:36)
+#12     _rootRunUnary (dart:async/zone.dart:1407:47)
+#13     _CustomZone.runUnary (dart:async/zone.dart:1308:19)
+#14     _FutureListener.handleValue (dart:async/future_impl.dart:156:18)
+#15     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:840:45)
+#16     Future._propagateToListeners (dart:async/future_impl.dart:869:13)
+#17     Future._completeWithValue (dart:async/future_impl.dart:641:5)
+#18     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:715:7)
+#19     _rootRun (dart:async/zone.dart:1399:13)
+#20     _CustomZone.run (dart:async/zone.dart:1301:19)
+#21     _CustomZone.runGuarded (dart:async/zone.dart:1209:7)
+#22     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1249:23)
+#23     _microtaskLoop (dart:async/schedule_microtask.dart:40:21)
+#24     _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+#25     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:123:13)
+#26     _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:190:5)
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.13.8, on Microsoft Windows [Version 10.0.22621.2428], locale en-PH)
+    [32m•[39m Flutter version 3.13.8 on channel stable at C:\src\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 6c4930c4ac (2 weeks ago), 2023-10-18 10:57:55 -0500
+    [32m•[39m Engine revision 767d8c75e8
+    [32m•[39m Dart version 3.1.4
+    [32m•[39m DevTools version 2.25.0
+
+[32m[✓][39m Windows Version (Installed version of Windows is version 10 or higher)
+
+[32m[✓][39m Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+    [32m•[39m Android SDK at C:\Users\INTEL\AppData\Local\Android\sdk
+    [32m•[39m Platform android-33, build-tools 33.0.0
+    [32m•[39m Java binary at: C:\Program Files\Android\Android Studio\jbr\bin\java
+    [32m•[39m Java version OpenJDK Runtime Environment (build 11.0.15+0-b2043.56-8887301)
+    [32m•[39m All Android licenses accepted.
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[32m[✓][39m Visual Studio - develop Windows apps (Visual Studio Build Tools 2022 17.3.1)
+    [32m•[39m Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools
+    [32m•[39m Visual Studio Build Tools 2022 version 17.3.32811.315
+    [32m•[39m Windows 10 SDK version 10.0.19041.0
+
+[32m[✓][39m Android Studio (version 2022.1)
+    [32m•[39m Android Studio at C:\Program Files\Android\Android Studio
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version OpenJDK Runtime Environment (build 11.0.15+0-b2043.56-8887301)
+
+[32m[✓][39m Connected device (5 available)
+    [32m•[39m RMX3363 (mobile)             • 6886861b      • android-arm64  • Android 13 (API 33)
+    [32m•[39m AOSP on IA Emulator (mobile) • emulator-5554 • android-x86    • Android 9 (API 28) (emulator)
+    [32m•[39m Windows (desktop)            • windows       • windows-x64    • Microsoft Windows [Version 10.0.22621.2428]
+    [32m•[39m Chrome (web)                 • chrome        • web-javascript • Google Chrome 118.0.5993.120
+    [32m•[39m Edge (web)                   • edge          • web-javascript • Microsoft Edge 118.0.2088.76
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are available.
+
+[32m•[39m No issues found!
+```
